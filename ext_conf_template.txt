@@ -1,2 +1,2 @@
-# cat=jQuery; type=user[Dagou\Jquery\Utility\ExtensionManagerConfigurationUtility->renderCDNSelector]; label=jQuery CDN Source
+# cat=jQuery; type=user[Dagou\Jquery\ExtensionManagerConfiguration->renderCDNSelector]; label=jQuery CDN Source
 cdn =

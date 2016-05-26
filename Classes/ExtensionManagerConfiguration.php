@@ -1,8 +1,13 @@
 <?php
-namespace Dagou\Jquery\Utility;
+namespace Dagou\Jquery;
 
-class ExtensionManagerConfigurationUtility {
-	public function renderCDNSelector(array $params, $pObj) {
+class ExtensionManagerConfiguration {
+	/**
+	 * @param array $params
+	 * @param \TYPO3\CMS\Extensionmanager\ViewHelpers\Form\TypoScriptConstantsViewHelper $typoScriptConstantsViewHelper
+	 * @return string
+	 */
+	public function renderCDNSelector(array $params, \TYPO3\CMS\Extensionmanager\ViewHelpers\Form\TypoScriptConstantsViewHelper $typoScriptConstantsViewHelper) {
 		$selector = '<select id="em-'.$params['propertyName'].'" class="form-control" name="'.$params['fieldName'].'">';
 
 		foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN'] as $cdn => $_) {
