@@ -9,12 +9,9 @@ class LoadViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 	 * @see \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArguments()
 	 */
 	public function initializeArguments() {
-		$this->registerArgument('footer', 'boolean', 'Add to footer or not', FALSE, TRUE);
+		$this->registerArgument('footer', 'boolean', 'Add to footer or not.', FALSE, TRUE);
 	}
 
-	/**
-	 * @return void
-	 */
 	public function render() {
 		JqueryUtility::loadJquery($this->arguments['footer']);
 	}
