@@ -5,9 +5,9 @@ if (!defined('TYPO3_MODE')) {
 
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['CDN'] = [
 	'None' => '',
-	'MaxCDN' => '//code.jquery.com/jquery-3.0.0.min.js',
-	'Google' => '//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js',
-	'Microsoft' => '//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js',
-	'CDNJS' => '//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js',
-	'jsDelivr' => '//cdn.jsdelivr.net/jquery/3.0.0/jquery.min.js',
+	'MaxCDN' => '//code.jquery.com/jquery-3.1.1.min.js',
+	'Google' => '//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+	'Microsoft' => '//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js',
+	'CDNJS' => '//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+	'jsDelivr' => '//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js',
 ];
