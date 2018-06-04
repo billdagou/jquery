@@ -10,7 +10,7 @@ class Microsoft extends AbstractCdn {
      */
     public function load(string $js = NULL, bool $footer = TRUE) {
         parent::load(
-            self::URL.$this->getBuild(),
+            self::URL.$this->getJs(),
             $footer
         );
     }

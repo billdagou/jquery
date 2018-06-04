@@ -10,7 +10,7 @@ class Google extends AbstractCdn {
      */
     public function load(string $js = NULL, bool $footer = TRUE) {
         parent::load(
-            self::URL.$this->getBuild(),
+            self::URL.self::VERSION.'/'.$this->getJs(),
             $footer
         );
     }
@@ -18,12 +18,12 @@ class Google extends AbstractCdn {
     /**
      * @return string
      */
-    protected function getBuild() {
+    protected function getJs() {
         switch ($this->getExtConf()['build']) {
             case 'default':
-                return self::VERSION.'/jquery.min.js';
+                return 'jquery.min.js';
             case 'slim':
-                return self::VERSION.'/jquery.slim.min.js';
+                return 'jquery.slim.min.js';
         }
     }
 }

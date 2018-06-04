@@ -14,7 +14,7 @@ class Local extends AbstractCdn {
     public function load(string $js = NULL, bool $footer = TRUE) {
         parent::load(
             $this->getAssetPath(
-                self::URL.$this->getBuild()
+                self::URL.$this->getJs()
             ),
             $footer
         );

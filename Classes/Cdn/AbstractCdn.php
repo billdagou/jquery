@@ -24,7 +24,7 @@ abstract class AbstractCdn implements Cdn, SingletonInterface {
     /**
      * @return string
      */
-    protected function getBuild() {
+    protected function getJs() {
         switch ($this->getExtConf()['build']) {
             case 'default':
                 return 'jquery-'.self::VERSION.'.min.js';
