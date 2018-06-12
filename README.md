@@ -6,14 +6,14 @@ You can easily choose using CDN or local jQuery library.
 **The extension version only matches jQuery library version, doesn't mean anything else.**
 
 ## How to use it
-You can load the libraries in your Fluid template with **LoadViewHelper**.
+You can load the library in your Fluid template with **LoadViewHelper**.
 
 	<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
 		xmlns:jq="http://typo3.org/ns/Dagou/Jquery/ViewHelpers">
 		<jq:load />
 	</html>
 
-You can also load your own libraries.
+You can also load your own library.
 
     <jq:load js="..." />
     
