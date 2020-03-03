@@ -1,5 +1,2 @@
-# cat=jQuery; type=user[Dagou\Jquery\Utility\ExtensionManagerConfigurationUtility->buildCdnSelector]; label=jQuery CDN
-cdn =
-
 # cat=jQuery; type=options[Default=default,Slim=slim]; label=Build
 build =

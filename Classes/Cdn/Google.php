@@ -1,25 +1,14 @@
 <?php
-namespace Dagou\Jquery\Cdn;
+namespace Dagou\Jquery\CDN;
 
-class Google extends AbstractCdn {
-    const URL = '//ajax.googleapis.com/ajax/libs/jquery/';
-
-    /**
-     * @param string|NULL $js
-     * @param bool $footer
-     */
-    public function load(string $js = NULL, bool $footer = TRUE) {
-        parent::load(
-            self::URL.self::VERSION.'/'.$this->getJs(),
-            $footer
-        );
-    }
+class Google extends AbstractCDN {
+    const URL = '//ajax.googleapis.com/ajax/libs/jquery/'.self::VERSION.'/';
 
     /**
      * @return string
      */
-    protected function getJs() {
-        switch ($this->getExtConf()['build']) {
+    protected function getBuild(): string {
+        switch ($this->getExtConf('build')) {
             case 'default':
                 return 'jquery.min.js';
             case 'slim':

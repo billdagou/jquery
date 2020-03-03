@@ -1,25 +1,14 @@
 <?php
-namespace Dagou\Jquery\Cdn;
+namespace Dagou\Jquery\CDN;
 
-class jsDelivr extends AbstractCdn {
+class jsDelivr extends AbstractCDN {
     const URL = '//cdn.jsdelivr.net/npm/jquery@'.self::VERSION.'/dist/';
-
-    /**
-     * @param string|NULL $js
-     * @param bool $footer
-     */
-    public function load(string $js = NULL, bool $footer = TRUE) {
-        parent::load(
-            self::URL.$this->getJs(),
-            $footer
-        );
-    }
 
     /**
      * @return string
      */
-    protected function getJs() {
-        switch ($this->getExtConf()['build']) {
+    protected function getBuild(): string {
+        switch ($this->getExtConf('build')) {
             case 'default':
                 return 'jquery.min.js';
             case 'slim':

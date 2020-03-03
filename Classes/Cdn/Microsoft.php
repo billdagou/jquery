@@ -1,17 +1,6 @@
 <?php
-namespace Dagou\Jquery\Cdn;
+namespace Dagou\Jquery\CDN;
 
-class Microsoft extends AbstractCdn {
+class Microsoft extends AbstractCDN {
     const URL = '//ajax.aspnetcdn.com/ajax/jQuery/';
-
-    /**
-     * @param string|NULL $js
-     * @param bool $footer
-     */
-    public function load(string $js = NULL, bool $footer = TRUE) {
-        parent::load(
-            self::URL.$this->getJs(),
-            $footer
-        );
-    }
 }

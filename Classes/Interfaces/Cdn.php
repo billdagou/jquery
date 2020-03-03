@@ -1,8 +1,8 @@
 <?php
 namespace Dagou\Jquery\Interfaces;
 
-interface Cdn {
-    const VERSION = '3.3.1';
+interface CDN {
+    const VERSION = '3.4.1';
 
     /**
      * @param string|NULL $js
