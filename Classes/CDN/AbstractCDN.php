@@ -30,7 +30,7 @@ abstract class AbstractCDN implements CDN, SingletonInterface {
      * @return string
      */
     protected function renderJs(string $js = NULL): string {
-        return self::URL.$this->getBuild();
+        return static::URL.$this->getBuild();
     }
 
     /**
