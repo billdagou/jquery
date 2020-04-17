@@ -1,5 +1,6 @@
 # TYPO3 Extension: jQuery
-EXT:jquery allows you to use [jQuery](http://jquery.com/) in your extensions.
+
+EXT:jquery allows you to use [jQuery](https://jquery.com/) in your extensions.
 
 **The extension version only matches the jQuery library version, it doesn't mean anything else.**
 
