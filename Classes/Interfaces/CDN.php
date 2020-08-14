@@ -2,7 +2,7 @@
 namespace Dagou\Jquery\Interfaces;
 
 interface CDN {
-    const VERSION = '3.5.0';
+    const VERSION = '3.5.1';
 
     /**
      * @param string|NULL $js
