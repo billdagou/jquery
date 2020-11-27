@@ -11,6 +11,8 @@ class LoadViewHelper extends AbstractViewHelper {
     public function initializeArguments() {
         $this->registerArgument('footer', 'boolean', 'Add to footer or not.', FALSE, TRUE);
         $this->registerArgument('js', 'string', 'jQuery file path.');
+
+        $this->registerArgument('disableCdn', 'boolean', 'Disable CDN.');
     }
 
     public function render() {
@@ -29,10 +31,17 @@ class LoadViewHelper extends AbstractViewHelper {
             return GeneralUtility::makeInstance(Customization::class);
         }
 
-        if (($className = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN']) && is_subclass_of($className, CDN::class)) {
+        if ($this->isCdnEnabled() && ($className = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN']) && is_subclass_of($className, CDN::class)) {
             return GeneralUtility::makeInstance($className);
         } else {
             return GeneralUtility::makeInstance(Local::class);
         }
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isCdnEnabled(): bool {
+        return !$this->arguments['disableCdn'];
     }
 }

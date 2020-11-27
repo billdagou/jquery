@@ -20,3 +20,7 @@ Or, load the JS before the &lt;BODY&gt; tag.
 To use the CDN resource, please set `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN']` in `ext_localconf.php` or `AdditionalConfiguration.php`.
 
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN'] = \Dagou\Jquery\CDN\StackPath::class;
+
+Unfortunately, you may have to disable the CDN for some reason, like saving as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+
+    <jq:load disableCdn="true" />
