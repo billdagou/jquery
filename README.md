@@ -5,22 +5,20 @@ EXT:jquery allows you to use [jQuery](https://jquery.com/) in your extensions.
 **The extension version only matches the jQuery library version, it doesn't mean anything else.**
 
 ## How to use it
-You can load the library in your Fluid template with **LoadViewHelper**.
+You can load the library in your Fluid template.
 
 	<jq:load />
 
 You can also load your own library.
 
-    <jq:load js="..." />
-    
-Or, load the JS before the &lt;BODY&gt; tag.
+    <jq:load src="..." />
 
-    <jq:load footer="false" />
-    
-To use the CDN resource, please set `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN']` in `ext_localconf.php` or `AdditionalConfiguration.php`.
+For more options please refer to &lt;f:asset.script&gt;.
 
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['CDN'] = \Dagou\Jquery\CDN\StackPath::class;
+To use other jQuery source, you can register it in `ext_localconf.php` or `AdditionalConfiguration.php`.
 
-Unfortunately, you may have to disable the CDN for some reason, like saving as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+    \Dagou\Jquery\Utility\ExtensionUtility::registerSource(\Dagou\Jquery\Source\StackPath::class);
 
-    <jq:load disableCdn="true" />
+You may want to disable the other source and use the local one instead in some cases, for example saving page as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+
+    <jq:load disableSource="true" />
