@@ -2,7 +2,7 @@
 namespace Dagou\Jquery\Interfaces;
 
 interface Source {
-    const VERSION = '3.5.1';
+    const VERSION = '3.6.0';
 
     /**
      * @return string
