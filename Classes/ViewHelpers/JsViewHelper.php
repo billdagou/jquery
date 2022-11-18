@@ -8,9 +8,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
 
 class JsViewHelper extends ScriptViewHelper {
+    protected static array $builds = [
+        'slim',
+    ];
+
     public function initializeArguments(): void {
         parent::initializeArguments();
 
+        $this->registerArgument('build', 'string', 'Build name');
         $this->registerArgument('disableSource', 'boolean', 'Disable Source.');
 
         $this->overrideArgument(
@@ -35,7 +40,9 @@ class JsViewHelper extends ScriptViewHelper {
                 $source = GeneralUtility::makeInstance(Local::class);
             }
 
-            $this->tag->addAttribute('src', $source->getJs());
+            $build = in_array($this->arguments['build'], self::$builds) ? $this->arguments['build'] : '';
+
+            $this->tag->addAttribute('src', $source->getJs($build));
         }
 
         return parent::render();

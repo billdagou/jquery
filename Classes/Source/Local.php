@@ -2,5 +2,5 @@
 namespace Dagou\Jquery\Source;
 
 class Local extends AbstractSource {
-    const URL = 'EXT:jquery/Resources/Public/';
+    protected const URL = 'EXT:jquery/Resources/Public/';
 }

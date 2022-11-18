@@ -2,10 +2,10 @@
 namespace Dagou\Jquery\Interfaces;
 
 interface Source {
-    const VERSION = '3.6.1';
-
     /**
+     * @param string $build
+     *
      * @return string
      */
-    public function getJs(): string;
+    public function getJs(string $build): string;
 }
