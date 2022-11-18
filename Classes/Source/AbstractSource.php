@@ -11,6 +11,8 @@ abstract class AbstractSource implements Source {
 
     /**
      * @return string
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException
      */
     public function getJs(): string {
         return static::URL.$this->getJsBuild();
@@ -18,6 +20,8 @@ abstract class AbstractSource implements Source {
 
     /**
      * @return string
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException
      */
     protected function getJsBuild(): string {
         switch ($this->getExtConf('build')) {
