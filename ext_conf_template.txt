@@ -1,2 +1,0 @@
-# cat=jQuery; type=options[Default=default,Slim=slim]; label=Build
-build =
