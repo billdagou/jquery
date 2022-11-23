@@ -9,6 +9,10 @@ You can load the library in your Fluid template.
 
 	<jq:js />
 
+Or use the `slim` version.
+
+    <jq:js build="slim">
+
 You can also load your own library.
 
     <jq:js src="..." />
