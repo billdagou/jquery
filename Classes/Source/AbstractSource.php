@@ -5,7 +5,7 @@ use Dagou\Jquery\Interfaces\Source;
 
 abstract class AbstractSource implements Source {
     protected const URL = '';
-    protected const VERSION = '3.6.1';
+    protected const VERSION = '3.7.0';
 
     /**
      * @param string $build

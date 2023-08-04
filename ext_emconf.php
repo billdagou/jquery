@@ -2,11 +2,11 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'jQuery',
     'description' => 'jQuery, https://jquery.com/',
-    'version' => '3.6.1',
+    'version' => '3.7.0',
     'category' => 'misc',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
+            'typo3' => '12.4.0-12.4.99',
         ],
     ],
     'state' => 'stable',
