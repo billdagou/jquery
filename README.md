@@ -7,22 +7,16 @@ EXT:jquery allows you to use [jQuery](https://jquery.com/) in your extensions.
 ## How to use it
 You can load the library in your Fluid template.
 
-	<jq:js />
+	<f:asset.script identifier="jquery" src="{jq:uri.js()}" />
 
 Or use the `slim` version.
 
-    <jq:js build="slim">
-
-You can also load your own library.
-
-    <jq:js src="..." />
-
-For more options please refer to &lt;f:asset.script&gt;.
+    <f:asset.script identifier="jquery" src="{jq:uri.js(build: 'slim')}" />
 
 To use other jQuery source, you can register it in `ext_localconf.php` or `AdditionalConfiguration.php`.
 
     \Dagou\Jquery\Utility\ExtensionUtility::registerSource(\Dagou\Jquery\Source\StackPath::class);
 
-You may want to disable the other source and use the local one instead in some cases, for example saving page as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+You may want to disable the source and use the local one instead in some cases, for example saving page as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
 
-    <jq:js disableSource="true" />
+    {jq:uri.js(forceLocal: "true")}
