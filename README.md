@@ -5,13 +5,14 @@ EXT:jquery allows you to use [jQuery](https://jquery.com/) in your extensions.
 **The extension version only matches the jQuery library version, it doesn't mean anything else.**
 
 ## How to use it
-You can load the library in your Fluid template.
+
+You can load the library in your Fluid template easily.
 
 	<f:asset.script identifier="jquery" src="{jq:uri.js()}" />
 
 Or use the `slim` version.
 
-    <f:asset.script identifier="jquery" src="{jq:uri.js(build: 'slim')}" />
+    {jq:uri.js(build: "slim")}
 
 To use other jQuery source, you can register it in `ext_localconf.php` or `AdditionalConfiguration.php`.
 

@@ -1,7 +1,7 @@
 <?php
-namespace Dagou\Jquery\Interfaces;
+namespace Dagou\Jquery\Source;
 
-interface Source {
+interface SourceInterface {
     /**
      * @param string $build
      *

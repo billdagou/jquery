@@ -2,16 +2,19 @@
 namespace Dagou\Jquery\ViewHelpers\Uri;
 
 use Dagou\Jquery\Source\Local;
-use Dagou\Jquery\Interfaces\Source;
+use Dagou\Jquery\Source\SourceInterface;
 use Dagou\Jquery\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-class JsViewHelper extends AbstractViewHelper {
+final class JsViewHelper extends AbstractViewHelper {
     protected static array $builds = [
         'slim',
     ];
 
+    /**
+     * @return void
+     */
     public function initializeArguments(): void {
         $this->registerArgument('build', 'string', 'Build name');
         $this->registerArgument('forceLocal', 'boolean', 'Force to use local source.');
@@ -22,7 +25,7 @@ class JsViewHelper extends AbstractViewHelper {
      */
     public function render(): string {
         if ($this->arguments['forceLocal'] !== TRUE
-            && is_subclass_of(($className = ExtensionUtility::getSource()), Source::class)
+            && is_subclass_of(($className = ExtensionUtility::getSource()), SourceInterface::class)
         ) {
             $source = GeneralUtility::makeInstance($className);
         } else {

@@ -1,6 +1,6 @@
 <?php
 namespace Dagou\Jquery\Source;
 
-class StackPath extends AbstractSource {
-    protected const URL = '//code.jquery.com/';
+final class StackPath extends AbstractSource {
+    protected const string URL = '//code.jquery.com/';
 }

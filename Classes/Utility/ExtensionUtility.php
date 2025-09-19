@@ -1,11 +1,13 @@
 <?php
 namespace Dagou\Jquery\Utility;
 
-class ExtensionUtility {
+final class ExtensionUtility {
     /**
      * @param string $sourceClassName
+     *
+     * @return void
      */
-    public static function registerSource(string $sourceClassName) {
+    public static function registerSource(string $sourceClassName): void {
         $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['jquery']['Source'] = $sourceClassName;
     }
 

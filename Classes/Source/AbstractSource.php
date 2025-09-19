@@ -1,11 +1,9 @@
 <?php
 namespace Dagou\Jquery\Source;
 
-use Dagou\Jquery\Interfaces\Source;
-
-abstract class AbstractSource implements Source {
-    protected const URL = '';
-    protected const VERSION = '3.7.0';
+abstract class AbstractSource implements SourceInterface {
+    protected const string URL = '';
+    protected const string VERSION = '3.7.1';
 
     /**
      * @param string $build
@@ -13,7 +11,7 @@ abstract class AbstractSource implements Source {
      * @return string
      */
     public function getJs(string $build): string {
-        return static::URL.$this->getJsBuild($build);
+        return static::URL.$this->getBuild($build);
     }
 
     /**
@@ -21,7 +19,7 @@ abstract class AbstractSource implements Source {
      *
      * @return string
      */
-    protected function getJsBuild(string $buildName): string {
+    protected function getBuild(string $buildName): string {
         return 'jquery-'.self::VERSION.($buildName ? '.'.$buildName : '').'.min.js';
     }
 }
